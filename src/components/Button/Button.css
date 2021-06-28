@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap');
+
+.button--normal{
+    height: auto !important;
+    border: none!important;
+    background-color: #C7F0A7 !important;
+    border-radius: 20px !important;
+    text-transform: uppercase;
+    font-size: 3.5em !important;
+    min-width: 470px;
+    box-shadow: 5px 5px 0 rgba(0 , 0, 0 , 0.05) !important;
+    font-family: 'Montserrat';
+
+    transition: all linear .6s !important;
+}
+
+.button--normal:active{
+    background-color:#B3D796 !important;
+}
+
+.button--normal:hover{
+    letter-spacing: .32em !important;
+}
