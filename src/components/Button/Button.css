@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap');
 
 .button--normal{
-    height: auto !important;
+    height: 87px!important;
+    width: 470px!important;
+
     border: none!important;
     background-color: #C7F0A7 !important;
     border-radius: 20px !important;
     text-transform: uppercase;
-    font-size: 3.5em !important;
-    min-width: 470px;
-    box-shadow: 5px 5px 0 rgba(0 , 0, 0 , 0.05) !important;
+    font-size: 3.6em !important;
+    filter: drop-shadow(5px 4px 4px rgba(0, 0, 0, 0.25));
     font-family: 'Montserrat';
 
     transition: all linear .6s !important;

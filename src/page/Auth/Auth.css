@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;700&display=swap');
+
+.auth{
+    display: flex;  
+
+    justify-content: center;
+
+    align-items: center;
+
+    height: 100%;
+
+}
+
+.auth__top{
+    margin-bottom: 50px;
+
+    font-family: "Montserrat";
+    font-weight: 600;
+    font-style: normal; 
+    font-size: 48px;
+    line-height: 59px;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+
+form{
+    display: flex!important;
+    flex-direction: column!important;
+    justify-content: center !important;
+    min-width: 500px;
+}
+
+div{
+    margin-left: 0!important;
+    max-width: 100%!important;
+}
+
+button{
+    width: 100%;
+
+}
+
+.ant-col-16{
+    width: 100%;
+}
+
+span.ant-input-password{
+    border: none !important;
+    border-radius: 0 !important;
+    
+    border-bottom: 1px solid black!important;
+}
+
+span.ant-input-affix-wrapper-focused{
+    border-bottom: 4px solid black!important;
+}
+
+input#basic_password{
+    text-align: center; 
+}
+
+input:not(input#basic_password){
+    border: none!important;
+
+    border-radius: 0 !important;
+
+    text-align: center;
+    
+    border-bottom: 1px solid black!important; 
+}
+
+input:not(input#basic_password):focus{
+    border-bottom: 4px solid black!important;
+}
+
+input:not(input#basic_password):focus span.ant-input-suffixю{
+    padding-bottom: 30px!important;
+}
+
+input{
+    font-family: "Montserrat" !important;
+    font-size: 18px !important;
+    letter-spacing: .84em!important;
+}
+
+button{
+    background-color: #C7F0A7 !important;
+    text-transform: uppercase !important;
+
+    border-radius: 20px !important; 
+
+    border: none !important;
+    font-size: 36px !important;
+    color: white !important;
+    letter-spacing: .11em !important;
+
+    padding-bottom: 12px !important;
+    padding-top: 12px !important;
+
+    height: auto !important;
+
+    box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.15) !important;
+
+    transition: all linear .5s !important;
+
+}
+
+button:hover{
+    letter-spacing: .45em !important;
+}
+
+button:active{
+    transform: translate3d(10px 4px 1px) ;
+}
+
+.link--reg{
+    font-family: Montserrat;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 0.245em;
+
+    color: #868282;
+
+    transition: all linear .5s;
+
+}
+
+.link--reg:hover{
+    letter-spacing: .45em;
+    color: #868282;
+}

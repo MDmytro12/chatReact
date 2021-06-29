@@ -1,15 +1,11 @@
-import {Button , WhiteBlock} from './components';
+import LoginForm from './page/Auth'
 
-import './styles/app.css';
+import './styles/index.css'
 
 function App() {
   return (
     <div className="app">
-       <h1>Hello World!</h1>
-       <WhiteBlock>
-         <Button className="button--normal" size='large' type='primary'>Увійти</Button>
-       </WhiteBlock>
-       
+       <LoginForm />
     </div>
   );
 }
