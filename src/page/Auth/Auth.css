@@ -61,7 +61,7 @@ input#basic_password{
     text-align: center; 
 }
 
-input:not(input#basic_password){
+input:not(input#basic_password ,input#basic_passwordYet){
     border: none!important;
 
     border-radius: 0 !important;
@@ -71,7 +71,7 @@ input:not(input#basic_password){
     border-bottom: 1px solid black!important; 
 }
 
-input:not(input#basic_password):focus{
+input:not(input#basic_password ,input#basic_passwordYet):focus{
     border-bottom: 4px solid black!important;
 }
 
@@ -83,6 +83,10 @@ input{
     font-family: "Montserrat" !important;
     font-size: 18px !important;
     letter-spacing: .84em!important;
+}
+
+input::placeholder{
+    letter-spacing: .24em;
 }
 
 button{
@@ -131,3 +135,42 @@ button:active{
     letter-spacing: .45em;
     color: #868282;
 }
+
+input#basic_passwordYet{
+    text-align: center!important;
+}
+
+.reg-success{
+    color:  #C7F0A7 !important;
+    
+    text-align: center!important;
+
+    font-size: 140px!important;
+}
+
+.reg-scs-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+}
+
+.reg-scs-text{
+    color: #868282;
+
+    font-size: 18px;
+    letter-spacing: .24em;
+
+    margin-bottom: 30px;
+
+    width: 600px;
+
+    text-align: center;
+}
+.reg-success{
+    margin-bottom: 30px;
+}
+
+
