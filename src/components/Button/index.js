@@ -6,7 +6,7 @@ import classNames from 'classnames';
 
 import './Button.css';
 
-const Button = (props) => <BaseButton {...props} className={classNames('button', props.className , { 'button--large' : props.size === "large" })}  />
+const Button = (props) => <BaseButton {...props} type='submit' className={classNames('button', props.className , { 'button--large' : props.size === "large" })}  />
 
 
 Button.propTypes = {

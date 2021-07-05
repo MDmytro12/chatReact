@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import formatDistanceToNow from 'date-fns/formatDistanceToNow';
-import uaLocale from 'date-fns/locale/uk';
+import Time from '../Time';
 
 import './Message.css';
 import classNames from 'classnames';
@@ -15,38 +14,54 @@ const styleImg = {
     width: '60px'
 }
 
-const Message = ({avatar , user ,  text , date , isIm , isRead , attachments}) => (
-    <div className={classNames('wrapper' , {'wrapper-im': isIm})} >
-        
+const Message = ({avatar , user ,  text , date , isIm , isRead , attachments , isTyping}) => {
 
-        <div className='message'>
-            <div className='msg-avatar'>
-                <img style={styleImg} src={avatar} alt={`Avatart user: ${user.fullname}`} />
-            </div>
-            <div className='msg-content'>   
-                <p>{text}</p>
-                {isRead && 
-                    <img src={isReadSvg} alt='Icon!' className='msg-read' />
-                } 
+    return ( <div className={classNames('wrapper' , {'wrapper-im': isIm , 'wrapper-typing': isTyping , 'wrapper-image ': attachments && attachments.length === 1 })} >
 
-                {!isRead && 
-                    <img src={isUnReadSvg} className='msg-read' alt='Icon!' />
-                }
-
-                <div className='msg-images'>
-                    {
-                    attachments.map(
-                        item => <img src={item.url} alt={item.filename} className='msg-add-img'/>
-                    )
-                }
-                </div>
-
-            </div>
+    <div className='message'>
+        <div className='msg-avatar'>
+            <img style={styleImg} src={avatar} alt={`Avatart user: ${user.fullname}`} />
+        </div>
+        <div className='msg-content'>   
+            <p>{text}</p>
             
-        </div> 
-        <span className='msg-date'>{formatDistanceToNow(date , {addSuffix: true , locale: uaLocale})}</span>
-    </div>
-)
+            {isTyping && 
+                <div className='msg--typing'>
+                    <div className='dot-one'></div>
+                    <div className='dot-two'></div>
+                    <div className='dot-three   '></div>
+                </div>
+            }
+            
+            {isRead && date && 
+                <img src={isReadSvg} alt='Icon!' className='msg-read' />
+            } 
+
+            {!isRead && date     && 
+                <img src={isUnReadSvg} className='msg-read' alt='Icon!' />
+            }
+            
+
+            {attachments && 
+            <div className='msg-images'>
+                {
+                attachments.map(
+                    (item , index) => <img src={item.url} alt={item.filename} key={index} className='msg-add-img'/>
+                )
+                }
+            </div>}
+
+        </div>
+        
+    </div> 
+    {date && 
+    <span className='msg-date'>
+        <Time date = {new Date()}/>
+    </span>
+    }
+    
+</div>)
+}
 
 Message.defaultProps  = {
     usr: {}
@@ -57,8 +72,8 @@ Message.propTypes = {
     text : PropTypes.string,
     date : PropTypes.array,
     user: PropTypes.object,
-    attachments: PropTypes.array
+    attachments: PropTypes.array, 
+    isTyping: PropTypes.bool
 };
-
 
 export default Message;
