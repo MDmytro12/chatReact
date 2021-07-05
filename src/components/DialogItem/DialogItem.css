@@ -88,6 +88,10 @@
     font-weight: 600;
     font-size: 18px;
     letter-spacing: 0.125em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 170px;
 }
 .dialogs_item-info-top{
     display: flex;

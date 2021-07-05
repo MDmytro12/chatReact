@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { Message } from 'components';
-import {DialogItem} from 'components';
-
+import Dialogs from '../../components/Dialogs';
 
 
 const Home = () => {
@@ -10,28 +8,44 @@ const Home = () => {
         <section className='home'>
 
             <div className='dialogs'>
-                <DialogItem 
-                    user={{
-                        name: 'Dmytro Medvedev',
-                        isOnline: true,
-                        isReaded: true
-                    }}
-                    message={{
-                        content: 'Hello every body!My name is Dmytro Medvedev! I study in a military institute!'
-                    }}
+                <Dialogs
+                    items={[
+                        {
+                            user:{
+                                name:'Dmytro Medvedev',
+                                isOnline: true,
+                                isReaded: true,
+                                _id: Math.random()
+                            },
+                            message:{
+                                content: 'DKDLKD d ewferf er gfe g re gre',
+                                sended_at: new Date()
+                            }
+                        },
+                        {
+                            user:{
+                                name:'Dmytro Medvedev',
+                                isOnline: true,
+                                isReaded: true
+                            },
+                            message:{
+                                content: 'DKDLKD d ewferf er gfe g re gre',
+                                sended_at: new Date()
+                            }
+                        },
+                        {
+                            user:{
+                                name:'Dmytro Medvedev',
+                                isOnline: true,
+                                isReaded: true
+                            },
+                            message:{
+                                content: 'DKDLKD d ewferf er gfe g re gre',
+                                sended_at: new Date()
+                            }
+                        }
+                    ]}
                 />
-                <DialogItem 
-                    user={{
-                        name: 'Dmytro Medvedev',
-                        isOnline: true,
-                        isReaded: true
-
-                    }}
-                    message={{
-                        content: 'Hello every body!My name is Dmytro Medvedev! I study in a military institute!'
-                    }}
-                />
-                
             </div>
 
             {/* <Message 
