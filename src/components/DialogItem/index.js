@@ -8,11 +8,27 @@ import Time from '../Time';
 import svgReaded from '../../assets/img/read.svg';
 import svgUnreaded from '../../assets/img/unread.svg';
 
-const getAvatar = avatar => {
-    if(avatar){
-        return <img src={avatar} alt='Avatar icon!' className='dialogs_item-avatar-image' />
+import getRGB from '../../utils/helpers/getRGB';
+const tinyColor = require('tinycolor2');
+
+const getAvatar = ( user ) => {
+    if(user.avatar){
+        return <img src={user.avatar} alt='Avatar icon!' className='dialogs_item-avatar-image' />
     } else{ 
-        // make avatar
+        const [r , g , b] = getRGB(user.name) ;
+
+        let color = tinyColor({
+            r,
+            g,
+            b
+        });
+
+
+        console.log(`linear-gradient(to top left , ${color.toHexString()} , ${color.lighten().toHexString()} )`);
+        return (
+        <div className='dialogs_item-avatar-image' style={{backgroundImage: `linear-gradient(to top left, ${color.toHexString()} , ${color.lighten(50).toHexString()} )`,color: 'white' , fontSize:'40px',display:'flex' , justifyContent: 'center' , alignItems: 'center' , fontWeight: '600'}}>
+            {user.name.substr(0 , 1)}
+        </div>)
     }
 }
 
@@ -20,7 +36,7 @@ const getAvatar = avatar => {
 const DialogItem = ({user , message}) => (
     <div className={classNames('dialogs_item' , {'dialogs_item--online' : user.isOnline})}>
         <div className='dialogs_item-avatar'>
-            {getAvatar('https://png.pngtree.com/element_our/20190530/ourlarge/pngtree-520-couple-avatar-boy-avatar-little-dinosaur-cartoon-cute-image_1263411.jpg')}
+            {getAvatar(user)}
         </div>
         <div className='dialogs_item-info'>
             <div className='dialogs_item-info-top'>

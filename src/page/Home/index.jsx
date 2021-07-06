@@ -14,10 +14,11 @@ const Home = () => {
                         {
                             'sended_at': new Date(2018 , 3 ,3),
                             user:{
-                                name:'Dmytro Medvedev',
+                                name:'Mantyk Dmytro',
                                 isOnline: true,
                                 isReaded: true,
-                                _id: Math.random()
+                                _id: Math.random(),
+                                avatar: null
                             },
                             message:{
                                 content: '2018',
@@ -27,10 +28,11 @@ const Home = () => {
                         {
                             'sended_at': new Date(2019 , 3 ,13),
                             user:{
-                                name:'Dmytro Medvedev',
+                                name:'Ishchuk Roman',
                                 isOnline: true,
                                 isReaded: false,
-                                _id: Math.random()
+                                _id: Math.random(),
+                                avatar: null
                             },
                             message:{
                                 content: '2019',
@@ -43,7 +45,8 @@ const Home = () => {
                                 name:'Dmytro Medvedev',
                                 isOnline: true,
                                 isReaded: true,
-                                _id: Math.random()
+                                _id: Math.random(),
+                                avatar: null
                             },
                             message:{
                                 content: '2021  ',

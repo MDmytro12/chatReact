@@ -20,8 +20,6 @@ const styleImg = {
     width: '60px'
 }
 
-
-
 const Message = ({avatar , user ,  text , date , isIm , isRead , attachments , isTyping , audio}) => {
 
     const [playingAudio , setPlaying] = useState(false);
@@ -58,8 +56,6 @@ const Message = ({avatar , user ,  text , date , isIm , isRead , attachments , i
             audioProgress.current.style.setProperty('width' , '0%' , 'important');
             audioTime.current.innerText = '00:00';
         });
-
-        console.log(audioProgress.current.style.width)
         
         audioRef.current.volume = '0.1';
         if(playingAudio){
