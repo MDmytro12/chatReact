@@ -101,10 +101,9 @@
 .wrapper-im .msg-date{
     display: flex;
 
-    justify-content: end;
+    justify-content: flex-end;
 
     margin-right: 111px;
- 
 }
 
 .msg-read{
@@ -246,5 +245,63 @@
 }
 
 .message{
+
+
     padding: 30px;
+}
+
+.audio{
+    position: relative;
+
+    overflow: hidden;
+}
+
+.audio-info-wave{
+    position: relative;
+}
+
+.audio-progress{
+    position: absolute;
+
+    top:0;
+    left:0;
+
+    width: 0%!important;
+    height: 100%;
+    
+    background-color: white;
+
+    border-radius: 20px;
+
+    opacity: 0.3;
+
+}
+
+.audio-info-btn-play{
+    padding: 0 !important;
+
+    width: auto;
+    
+    border-radius: 100px !important;
+}
+.audio-info-wave img{
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.audio-info{
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    width: 400px;
+}
+
+.audio span{
+    color: white;
 }

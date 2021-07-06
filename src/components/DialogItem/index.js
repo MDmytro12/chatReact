@@ -3,9 +3,10 @@ import classNames from 'classnames';
 
 import './DialogItem.css';
 
+import Time from '../Time';
+
 import svgReaded from '../../assets/img/read.svg';
-import svgUnreaded from '../../assets/img/unread.svg'
-import { format } from 'date-fns';
+import svgUnreaded from '../../assets/img/unread.svg';
 
 const getAvatar = avatar => {
     if(avatar){
@@ -15,7 +16,6 @@ const getAvatar = avatar => {
     }
 }
 
-const getCorrectTime = time => format(new Date() , 'HH:mm');
 
 const DialogItem = ({user , message}) => (
     <div className={classNames('dialogs_item' , {'dialogs_item--online' : user.isOnline})}>
@@ -28,7 +28,7 @@ const DialogItem = ({user , message}) => (
                     {user.name}
                 </b>
                 <span>
-                    {getCorrectTime(message.sended_at)}
+                    <Time date={message.sended_at}/>
                 </span>
             </div>
             <div className='dialogs_item-info-bottom'>

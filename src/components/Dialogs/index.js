@@ -1,13 +1,13 @@
 import React from 'react';
-import classNames from 'classnames';
 
 import DialogItem from '../DialogItem';
 
 import './Dialogs.css';
+import { orderBy } from 'lodash-es';
 
 const Dialogs = ({items}) => (
     <div className='dialogs'>
-        {items.map( (item , index) => <DialogItem user={item.user} message={item.message} /> )}
+        {orderBy(items , ['sended_at'], ['asc']).map( item  => <DialogItem user={item.user} message={item.message} key={item.user._id} /> )}
     </div>
 )
 
